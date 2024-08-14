@@ -1,0 +1,11 @@
+:root {
+  font-size: 10vh;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+}
+
+#app {
+}
