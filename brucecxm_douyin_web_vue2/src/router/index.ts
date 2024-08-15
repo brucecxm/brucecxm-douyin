@@ -12,6 +12,11 @@ const router = new VueRouter({
       name: "Home",
       component: () => import("@/views/home.vue"), // 通过动态导入实现懒加载，当访问该路由时才加载 Home 组件
     },
+    {
+      path: "/me",
+      name: "Me",
+      component: () => import("@/views/me.vue"), // 通过动态导入实现懒加载，当访问该路由时才加载 Me组件
+    },
   ],
 });
 

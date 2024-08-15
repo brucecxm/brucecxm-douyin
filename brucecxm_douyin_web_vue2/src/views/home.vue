@@ -1,7 +1,7 @@
 <template>
     <div class="home">
         <header-vue class="header"></header-vue>
-        <div class="video"><videobox-vue></videobox-vue></div>
+        <div class="videobox"><videobox-vue></videobox-vue></div>
         <footer-vue></footer-vue>
     </div>
 </template>
@@ -36,7 +36,7 @@ export default {
 
 
 /* 视频播放区域 */
-.video {
+.videobox {
     width: 100%;
     height: 9rem;
     background-color: yellow;
