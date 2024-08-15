@@ -6,7 +6,7 @@
         <videoaside-vue class="videoaside"></videoaside-vue>
         <videoarticle-vue class="videoarticleVue"></videoarticle-vue>
         <div v-for="(box, index) in boxes" :key="index" class="box"
-            :style="{ top: box.top * 0.01 + 'rem', backgroundColor: box.color, width: boxWidth, height: boxHeigh * 0.01 + 'rem' }">
+            :style="{ top: box.top * 0.01 + 'rem', backgroundColor: box.color, width: boxWidth, height: boxHeight * 0.01 + 'rem' }">
             <video ref="videos" class="videoone" :src="videonum[index]" preload="true" loop x5-video-player-type="h5-page"
                 x5-video-player-fullscreen="false" webkit-playsinline="true" x5-playsinline="true" playsinline="true">
                 <p>您的浏览器不支持 video 标签。</p>
@@ -120,7 +120,8 @@ export default {
     position: absolute;
     /* 侧边栏的位置 */
     right: 0;
-    bottom: 2vh;
+    bottom: 6vh;
+    margin-right: 4vw;
 }
 
 .videoarticleVue {

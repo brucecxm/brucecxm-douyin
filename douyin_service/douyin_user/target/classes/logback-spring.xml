@@ -1,0 +1,37 @@
+<configuration>
+    <!-- 定义日志文件的路径 -->
+    <property name="LOG_PATH" value="d:/logs" />
+
+    <!-- 控制台日志输出 -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!-- 定义日志输出格式：日期 时间 [线程] 日志级别 日志记录器 - 日志消息 -->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 文件日志输出，使用滚动策略 -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- 定义日志文件路径和文件名 -->
+        <file>${LOG_PATH}/app.log</file>
+        <!-- 定义滚动策略，根据时间滚动 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- 滚动后的日志文件名模式，按日期命名 -->
+            <fileNamePattern>${LOG_PATH}/app.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- 保留30天的日志文件 -->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <!-- 定义日志输出格式：日期 时间 [线程] 日志级别 日志记录器 - 日志消息 -->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 定义根日志记录器的日志级别和附加器 -->
+    <root level="info">
+        <!-- 将日志输出到控制台 -->
+        <appender-ref ref="CONSOLE" />
+        <!-- 将日志输出到文件 -->
+        <appender-ref ref="FILE" />
+    </root>
+</configuration>

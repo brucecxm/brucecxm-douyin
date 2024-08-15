@@ -23,4 +23,5 @@
 hs_err_pid*
 replay_pid*
 
-/node_modules/
+
+/brucecxm_douyin_web_vue2/node_modules/
