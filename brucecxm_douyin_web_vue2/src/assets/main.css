@@ -1,10 +1,19 @@
 :root {
   font-size: 10vh;
+  width: 100vw;
+  height: 100vh;
+}
+
+* {
+  margin: 0px;
 }
 
 body {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
 }
 
 #app {
