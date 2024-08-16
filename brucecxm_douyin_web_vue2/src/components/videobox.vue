@@ -1,14 +1,23 @@
 <template>
     <div class="container" @mousedown="startDrag" @mouseup="stopDrag" @mousemove="drag" @mouseleave="stopDrag"
         @touchstart="startDrag" @touchend="stopDrag" @touchmove="drag"
-        :style="{ width: boxWidth, height: boxHeight * 0.01 + 'rem' }">
+        :style="{ width: boxWidth, height: boxHeight * 0.1 + 'vh' }">
 
-        <videoaside-vue class="videoaside"></videoaside-vue>
-        <videoarticle-vue class="videoarticleVue"></videoarticle-vue>
         <div v-for="(box, index) in boxes" :key="index" class="box"
-            :style="{ top: box.top * 0.01 + 'rem', backgroundColor: box.color, width: boxWidth, height: boxHeight * 0.01 + 'rem' }">
-            <video ref="videos" class="videoone" :src="videonum[index]" preload="true" loop x5-video-player-type="h5-page"
-                x5-video-player-fullscreen="false" webkit-playsinline="true" x5-playsinline="true" playsinline="true">
+            :style="{ top: box.top * 0.1 + 'vh', backgroundColor: box.color, width: boxWidth, height: boxHeight * 0.1 + 'vh' }">
+            <!-- 用div包一下 避免父组件中absolute对子组件flex布局的影响 -->
+            <div class="videoasideone">
+                <videoaside-vue :video-data="videoboxdata[index]"></videoaside-vue>
+
+            </div>
+            <div class="videoarticle">
+                <videoarticle-vue></videoarticle-vue>
+
+            </div>
+
+            <video ref="videos" class="videoone" :src="videoboxdata[index].videoUrl" preload="true" loop
+                x5-video-player-type="h5-page" x5-video-player-fullscreen="false" webkit-playsinline="true"
+                x5-playsinline="true" playsinline="true">
                 <p>您的浏览器不支持 video 标签。</p>
             </video>
         </div>
@@ -32,6 +41,58 @@ export default {
     },
     data() {
         return {
+            // 使用props传递数据 使用props的数据在组件中是单向传输的 但是我可以通过请求异步修改数据库中的数据 就可以了
+            videoboxdata: [
+                {
+                    videoUrl: oneImg,
+                    videoArticle: "",
+                    username: "",
+                    userAvatar: "",
+                    likeNum: "1",
+                    commentNum: "10",
+                    shareNum: "100",
+                    collectNum: "1000",
+                    musicAvatar: "",
+                    musicName: ""
+                },
+                {
+                    videoUrl: twoImg,
+                    videoArticle: "",
+                    username: "",
+                    userAvatar: "",
+                    likeNum: "2",
+                    commentNum: "20",
+                    shareNum: "200",
+                    collectNum: "2000",
+                    musicAvatar: "",
+                    musicName: ""
+                },
+                {
+                    videoUrl: threeImg,
+                    videoArticle: "",
+                    username: "",
+                    userAvatar: "",
+                    likeNum: "3",
+                    commentNum: "30",
+                    shareNum: "300",
+                    collectNum: "3000",
+                    musicAvatar: "",
+                    musicName: ""
+                },
+                {
+                    videoUrl: fourImg,
+                    videoArticle: "",
+                    username: "",
+                    userAvatar: "",
+                    likeNum: "4",
+                    commentNum: "40",
+                    shareNum: "400",
+                    collectNum: "4000",
+                    musicAvatar: "",
+                    musicName: ""
+                },
+
+            ],
             isDragging: false,
             startY: 0,
             currentY: 0,
@@ -45,16 +106,17 @@ export default {
     },
     created() {
         this.boxes = [
-            { color: "black", top: 0, boxtest: "推荐" },
-            { color: "black", top: 1 * this.boxHeight, boxtest: "直播" },
-            { color: "black", top: 2 * this.boxHeight, boxtest: "关注" },
-            { color: "black", top: 3 * this.boxHeight, boxtest: "同城" },
+            { color: "black", top: 0 },
+            { color: "black", top: 1 * this.boxHeight },
+            { color: "black", top: 2 * this.boxHeight },
+            { color: "black", top: 3 * this.boxHeight },
         ];
     },
     mounted() {
         this.updateVideoPlayback();
     },
     methods: {
+
         startDrag(event) {
             event.preventDefault();
             this.isDragging = true;
@@ -114,7 +176,7 @@ export default {
 </script>
 
 <style scoped>
-.videoaside {
+.videoasideone {
     display: block;
     z-index: 5;
     position: absolute;
@@ -124,7 +186,7 @@ export default {
     margin-right: 4vw;
 }
 
-.videoarticleVue {
+.videoarticle {
     display: block;
     z-index: 5;
     position: absolute;

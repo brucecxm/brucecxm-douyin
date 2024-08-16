@@ -38,7 +38,7 @@ export default {
 /* 视频播放区域 */
 .videobox {
     width: 100%;
-    height: 9rem;
+    height: 90vh;
     background-color: yellow;
 }
 </style>

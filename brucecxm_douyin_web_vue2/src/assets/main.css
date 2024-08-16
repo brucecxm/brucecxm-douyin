@@ -1,7 +1,24 @@
+/* 默认字体大小 */
 :root {
-  font-size: 10vh;
-  width: 100vw;
-  height: 100vh;
+  font-size: 16px; /* 默认值 */
+}
+
+@media screen and (max-width: 1500px) {
+  :root {
+    font-size: 80px;
+  }
+}
+
+@media screen and (min-width: 1501px) and (max-width: 2500px) {
+  :root {
+    font-size: 100px;
+  }
+}
+
+@media screen and (min-width: 2501px) {
+  :root {
+    font-size: 120px;
+  }
 }
 
 * {
@@ -9,11 +26,10 @@
 }
 
 body {
-  min-height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
-  width: 100vw;
-  height: 100vh;
 }
 
 #app {

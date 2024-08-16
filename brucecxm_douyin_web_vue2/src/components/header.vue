@@ -48,17 +48,20 @@ export default {
 <style scoped>
 .header {
     width: 100%;
-    height: 10vh;
+    max-height: 10vh;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .menu {
-    width: 10vw;
-    height: 10vw;
+    width: 1rem;
+    height: 1rem;
     background-image: url(../assets/home/菜单.png);
-    background-size: 10vw 10vw;
+    background-size: 1rem 1rem;
     background-repeat: no-repeat;
+    margin-left: 5vw;
 }
 
 .nav {
@@ -70,6 +73,7 @@ export default {
     align-items: center;
     overflow-x: auto;
     cursor: grab;
+    color: white;
 }
 
 /* 隐藏滚动条但保留滚动功能 */
@@ -78,17 +82,19 @@ export default {
 }
 
 p {
-    font-size: 5vw;
+    font-size: 1rem;
     margin: 5vw;
     flex-shrink: 0;
     user-select: none;
 }
 
 .search {
-    width: 10vw;
-    height: 10vw;
+    width: 1rem;
+    height: 1rem;
     background-image: url(../assets/home/放大镜.png);
-    background-size: 10vw 10vw;
+    background-size: 1rem 1rem;
+
     background-repeat: no-repeat;
+    margin-right: 5vw;
 }
 </style>
