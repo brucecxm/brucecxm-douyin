@@ -7,34 +7,41 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="douyin_testSpringfactories" />
-        <module name="douyin_article" />
         <module name="douyin_websocket" />
-        <module name="douyin_user" />
         <module name="douyin_schedule" />
         <module name="douyin_admin" />
-        <module name="douyin_music" />
         <module name="douyin_spring" />
         <module name="douyin_chat" />
         <module name="douyin_comment" />
-        <module name="douyin_testall" />
         <module name="douyin_file_starter" />
-        <module name="douyin_model" />
-        <module name="douyin_feign" />
-        <module name="douyin_introduce" />
         <module name="douyin_gateway" />
         <module name="douyin_behavior" />
-        <module name="douyin_eureka" />
-        <module name="douyin_file" />
-        <module name="douyin_shop" />
+        <module name="douyin_DelayTask" />
         <module name="douyin_satoken" />
         <module name="douyin_video" />
         <module name="douyin_search" />
+        <module name="douyin_article" />
+        <module name="douyin_user" />
+        <module name="douyin_music" />
+        <module name="douyin_testall" />
+        <module name="douyin_model" />
+        <module name="douyin_feign" />
+        <module name="douyin_introduce" />
+        <module name="DelayTask" />
+        <module name="douyin_eureka" />
+        <module name="douyin_file" />
+        <module name="douyin_shop" />
         <module name="douyin_Designpatterns" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="DelayTask" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="DelayTask" options="-parameters" />
+      <module name="douyin_DelayTask" options="-parameters" />
       <module name="douyin_Designpatterns" options="-parameters" />
       <module name="douyin_admin" options="-parameters" />
       <module name="douyin_article" options="-parameters" />

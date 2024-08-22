@@ -15,6 +15,7 @@
         <module>douyin_spring</module>
         <module>douyin_testall</module>
         <module>douyin_Designpatterns</module>
+        <module>douyin_DelayTask</module>
     </modules>
     <artifactId>douyin_test</artifactId>
 

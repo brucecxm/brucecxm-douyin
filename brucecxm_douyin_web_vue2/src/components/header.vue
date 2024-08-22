@@ -82,7 +82,7 @@ export default {
 }
 
 p {
-    font-size: 1rem;
+    font-size: 0.7rem;
     margin: 5vw;
     flex-shrink: 0;
     user-select: none;

@@ -33,7 +33,7 @@ export default {
 }
 
 .nav {
-    font-size: 0.2*rem;
+    font-size: 0.7rem;
     color: white;
 
 }
