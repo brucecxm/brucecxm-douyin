@@ -10,10 +10,16 @@
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "axios": "^1.7.5",
+    "easyui": "^8.0.0",
+    "jquery": "^3.7.1",
     "pinia": "^2.0.16",
     "vue": "^2.7.7",
     "vue-awesome": "^4.5.0",
-    "vue-router": "^3.5.4"
+    "vue-router": "^3.5.4",
+    "vx-easyui": "^1.2.57"
   },
   "devDependencies": {
     "@types/jsdom": "^16.2.14",
